@@ -42,19 +42,28 @@ fetch('https://jsonplaceholder.typicode.com/posts/?_start=0&_limit=7')
     document.body.appendChild(ul);
     wrapper.appendChild(ul);
 });
-
+// Disabled enter on input 
+    window.addEventListener('keydown',function(e) {
+    if (e.keyIdentifier == 'U+000A' || e.keyIdentifier =='Enter' || e.keyCode == 13) {
+        if (e.target.nodeName == 'INPUT' && e.target.type == 'text') {
+            e.preventDefault();
+            return false;
+        }}
+        },true);
 // Filter search headers
 
 let buttonSearch = document.querySelector('.test__button');
 buttonSearch.addEventListener('click', (e) => {
     function filter(e) {
+
         e.preventDefault();
         let input = document.querySelector('#site-search');
         let inputValue = input.value.toUpperCase();	
         let cards = document.querySelectorAll('.test__item');
-            //   Add input value in URL
-        location.replace(`https://lisofsky023.github.io/GATE-31-test/#${inputValue}`);
-        
+
+        //   Add input value in URL
+        location.replace(`http://127.0.0.1:5500/index.html#${inputValue}`);
+
         cards.forEach(
             function getMatch(info) {
                 let heading = info.querySelector('.test__title');

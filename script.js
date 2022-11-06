@@ -42,14 +42,7 @@ fetch('https://jsonplaceholder.typicode.com/posts/?_start=0&_limit=7')
     document.body.appendChild(ul);
     wrapper.appendChild(ul);
 });
-// Disabled enter on input 
-    window.addEventListener('keydown',function(e) {
-    if (e.keyIdentifier == 'U+000A' || e.keyIdentifier =='Enter') {
-        if (e.target.nodeName == 'INPUT' && e.target.type == 'text') {
-            e.preventDefault();
-            return false;
-        }}
-        },true);
+
 // Filter search headers
 
 let buttonSearch = document.querySelector('.test__button');
@@ -81,6 +74,7 @@ buttonSearch.addEventListener('click', (e) => {
         )
     };
     filter(e);
+
 });
         
     

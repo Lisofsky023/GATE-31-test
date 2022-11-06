@@ -53,7 +53,7 @@ buttonSearch.addEventListener('click', (e) => {
         let inputValue = input.value.toUpperCase();	
         let cards = document.querySelectorAll('.test__item');
             //   Add input value in URL
-        location.replace(`http://127.0.0.1:5500/index.html#${inputValue}`);
+        location.replace(`https://lisofsky023.github.io/GATE-31-test/#${inputValue}`);
         
         cards.forEach(
             function getMatch(info) {

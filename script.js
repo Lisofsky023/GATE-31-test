@@ -1,8 +1,16 @@
+let input = document.querySelector('.site-search'); // Disabled enter on input
+input.addEventListener('keypress', function (e) {
+    if (e.keyCode === 13 || e.which === 13) {
+        e.preventDefault();
+        return false;
+    }
+    
+});
+
 fetch('https://jsonplaceholder.typicode.com/posts/?_start=0&_limit=7')
 .then(response => response.json())
 .then(arr => {
-// Rendering data and creating elements
-    const headerItem = arr.map( item => {
+    const headerItem = arr.map( item => { // Rendering data and creating elements
         const li = document.createElement('li');
         const title = document.createElement('h2');
         const textItem = document.createElement('p');
@@ -21,9 +29,7 @@ fetch('https://jsonplaceholder.typicode.com/posts/?_start=0&_limit=7')
         textItem.innerText = item.body;
         title.innerText = item.title;
 
-// Change color item and text
-
-        checkBox.addEventListener('change', function(e){
+        checkBox.addEventListener('change', function(e) { // Change color item and text
             if (checkBox.checked){
                 li.style.backgroundColor = "black";
                 li.style.color = "white"
@@ -34,7 +40,6 @@ fetch('https://jsonplaceholder.typicode.com/posts/?_start=0&_limit=7')
         });
         return li;
     });
-
     const ul = document.createElement('ul');
     const wrapper = document.querySelector('.test__wrapper');
     ul.classList.add("test__list");
@@ -43,18 +48,13 @@ fetch('https://jsonplaceholder.typicode.com/posts/?_start=0&_limit=7')
     wrapper.appendChild(ul);
 });
 
-// Filter search headers
-
-let buttonSearch = document.querySelector('.test__button');
+let buttonSearch = document.querySelector('.test__button'); // Filter search headers
 buttonSearch.addEventListener('click', (e) => {
     function filter(e) {
-
         e.preventDefault();
         let input = document.querySelector('#site-search');
         let inputValue = input.value.toUpperCase();	
         let cards = document.querySelectorAll('.test__item');
-
-        //   Add input value in URL
         
         cards.forEach(
             function getMatch(info) {
@@ -64,7 +64,7 @@ buttonSearch.addEventListener('click', (e) => {
                 if (headingContent.includes(inputValue)) {
                     info.classList.add('show');
                     info.classList.remove('hide');	
-                    location.replace(`#${inputValue}`);
+                    location.replace(`#${inputValue}`); //   Add input value in URL
                 }
                 else {
                     info.classList.add('hide');
@@ -74,9 +74,11 @@ buttonSearch.addEventListener('click', (e) => {
         )
     };
     filter(e);
-
 });
-        
+
+
+
+
     
 
 

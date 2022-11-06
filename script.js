@@ -55,7 +55,7 @@ buttonSearch.addEventListener('click', (e) => {
         let cards = document.querySelectorAll('.test__item');
 
         //   Add input value in URL
-        location.replace(`https://lisofsky023.github.io/GATE-31-test/#${inputValue}`);
+        location.replace(`https://lisofsky023.github.io/GATE-31-test#${inputValue}`);
 
         cards.forEach(
             function getMatch(info) {

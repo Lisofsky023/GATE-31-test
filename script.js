@@ -64,7 +64,7 @@ buttonSearch.addEventListener('click', (e) => {
                 if (headingContent.includes(inputValue)) {
                     info.classList.add('show');
                     info.classList.remove('hide');	
-                    location.replace(`https://lisofsky023.github.io/GATE-31-test#${inputValue}`);
+                    location.replace(`#${inputValue}`);
                 }
                 else {
                     info.classList.add('hide');

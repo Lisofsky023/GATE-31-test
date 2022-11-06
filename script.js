@@ -55,8 +55,7 @@ buttonSearch.addEventListener('click', (e) => {
         let cards = document.querySelectorAll('.test__item');
 
         //   Add input value in URL
-        location.replace(`https://lisofsky023.github.io/GATE-31-test#${inputValue}`);
-
+        
         cards.forEach(
             function getMatch(info) {
                 let heading = info.querySelector('.test__title');
@@ -65,6 +64,7 @@ buttonSearch.addEventListener('click', (e) => {
                 if (headingContent.includes(inputValue)) {
                     info.classList.add('show');
                     info.classList.remove('hide');	
+                    location.replace(`https://lisofsky023.github.io/GATE-31-test#${inputValue}`);
                 }
                 else {
                     info.classList.add('hide');
